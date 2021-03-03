@@ -1,0 +1,21 @@
+ 
+ step 0 : run this command and select the window of the program that you want to adjust the 	  mouse scroll speed of
+ 
+         xprop WM_CLASS | grep -o '"[^"]*"' | head -n 1
+ 
+ 
+  step 1: make a file called .imwheelrc and save it in home directory
+  
+  step 2: open the file and save the following script 
+# Speed up scrolling for chromium and pass unchanged for zoom
+"^chromium$"
+    None, Up, Button4, 4
+    None, Down, Button5, 4
+    Shift_L,   Up,   Shift_L|Button4, 4
+    Shift_L,   Down, Shift_L|Button5, 4
+    Control_L, Up,   Control_L|Button4
+    Control_L, Down, Control_L|Button5
+    
+    step 3:run imwheel command from cmd
+    
+    
